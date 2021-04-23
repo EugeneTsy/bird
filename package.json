@@ -1,5 +1,5 @@
 {
-  "name": "bird",
+  "name": "snake",
   "version": "1.0.0",
   "description": "This is the first my game on js",
   "main": "index.js",
@@ -15,9 +15,9 @@
   "author": "tsy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EugeneTsy/bird/issues"
+    "url": "https://github.com/EugeneTsy/snake/issues"
   },
-  "homepage": "https://github.com/EugeneTsy/bird#readme",
+  "homepage": "https://github.com/EugeneTsy/snake#readme",
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.13.16",
