@@ -15,4 +15,15 @@ const presets = [
   ],
 ];
 
-module.exports = { presets }; 
+module.exports = {
+  env: {
+      production: {
+          presets: [
+              [
+                  '@babel/preset-env',
+                  { loose: false },
+              ],
+          ],
+      },
+  },
+}
