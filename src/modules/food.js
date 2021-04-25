@@ -1,4 +1,4 @@
-import { canvas, ctx, STEP } from "../index.js";
+import { canvas, ctx, GAME_SETTINGS } from "../index.js";
 import { snake } from "./snake";
 
 //создаем тут еду
@@ -7,7 +7,7 @@ export let foodX;
 export let foodY;
 
 export function randomNumber(min, max) {
-  return Math.round((Math.random() * (max-min) + min) / STEP) * STEP;
+  return Math.round((Math.random() * (max-min) + min) / 10) * GAME_SETTINGS.size;
 }
 
 
@@ -28,9 +28,9 @@ export function createFood() {
 //Рисуем еду в рандомном месте
 
 export function drawFood() {
-  ctx.fillStyle = 'red';
-  ctx.strokeStyle = 'darkred';
-  ctx.fillRect(foodX, foodY, STEP, STEP);
-  ctx.strokeRect(foodX, foodY, STEP, STEP);
+  ctx.fillStyle = 'black';
+  // ctx.strokeStyle = 'darkred';
+  ctx.fillRect(foodX, foodY, GAME_SETTINGS.size, GAME_SETTINGS.size);
+  // ctx.strokeRect(foodX, foodY, GAME_SETTINGS.size, GAME_SETTINGS.size);
 }
 

@@ -1,3 +1,66 @@
-canvas {
-  border: 1px solid black;
+@font-face { 
+  font-family: 'Pixel'; 
+  src: url('./font/Pixel.ttf');  
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  max-width: 600px;
+  height: calc(100vh - 28px);
+}
+
+#canvas {
+  border: 10px solid black;
+  flex-grow: 3;
+}
+
+
+#score_Display {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+#score_Value {
+  margin: 0;
+  font-family: "Pixel";
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  align-self: flex-end;
+}
+
+button {
+  display: block;
+  height: 60px;
+  border: none;
+  background-color: black;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  flex-grow: 1;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.btn-group_left-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-group_left-right_short {
+  width: calc((100% - 10px) / 2);
 }

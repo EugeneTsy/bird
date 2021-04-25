@@ -1,5 +1,5 @@
-import { scoreIncrease } from "./scoreIncrease";
-import { speed } from "../index";
+import { scoreContent } from "./scoreContent";
+import { offset_step } from "../index";
 import { createFood, foodX, foodY } from "./food";
 import { snake } from "./snake";
 
@@ -7,16 +7,17 @@ import { snake } from "./snake";
 //Описан принцип движения змейки
 export function moveSnake() {
   const head = {
-    x: snake[0].x + speed.dx,
-    y: snake[0].y + speed.dy,
+    x: snake[0].x + offset_step.x,
+    y: snake[0].y + offset_step.y,
   };
   snake.unshift(head);
   if (snake[0].x == foodX && snake[0].y == foodY) {
     createFood();
-    scoreIncrease();
+    scoreContent();
   }
   else
-    snake.pop();
+    snake.pop()
+    // setTimeout(snake.pop(), 10) 
 };
 
 

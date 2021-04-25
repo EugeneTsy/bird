@@ -6,8 +6,18 @@
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
-    <div id="score">0</div>
+    <div id="score_Display">
+        <p id="score_Value">0</p>
+    </div>
+    <canvas id="canvas">Ваш браузер не поддерживает элемент canvas</canvas>
+    <div class="btn-group">
+        <button id="top"></button>
+        <div class="btn-group_left-right">
+            <button class="btn-group_left-right_short" id="left"></button>
+            <button class="btn-group_left-right_short" id="right"></button>
+        </div>
+        <button id="bottom"></button>
+    </div>
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html> 

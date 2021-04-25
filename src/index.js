@@ -1,7 +1,7 @@
 import { drawSnake, snakePart } from "./modules/snake";
 import { moveSnake } from "./modules/moveSnake";
 import { createFood } from "./modules/food";
-import { didGameEnd, main, changeDirection } from "./modules/game";
+import { main, changeDirection } from "./modules/game";
 import "./style.css"; 
 
 
@@ -11,27 +11,34 @@ export const ctx = canvas.getContext('2d');
 
 export function clearCanvas () {
   ctx.fillStyle = 'white';
-  ctx.strokeStyle = 'black';
-
   ctx.fillRect(0, 0, canvas.width, canvas.height)
-  ctx.strokeRect(0, 0, canvas.width, canvas.height)
+  
+  // ctx.strokeStyle = 'black';
+  // ctx.strokeRect(0, 0, canvas.width, canvas.height)
 }
 
-export const STEP = 10;
-export const SPEED_VALUE = 100;
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
 
+
+
+export const GAME_SETTINGS = {
+  size: 10, 
+  speed: 0
+};
+ 
 //Горизонтальная и вертикальная скорость
-export const speed = {
-  dx: STEP,
-  dy: STEP
+export const offset_step = {
+  x: GAME_SETTINGS.size,
+  y: GAME_SETTINGS.size
 }
 
 
-document.addEventListener("keydown", changeDirection)
-//Нарисовали дефолтную змеюку
+document.addEventListener("keydown", changeDirection);
+document.addEventListener("click", changeDirection);
 
-speed.dx = 0;
-speed.dy = -STEP;
+offset_step.x = 0;
+offset_step.y = -GAME_SETTINGS.size;
 moveSnake();
 drawSnake();
 

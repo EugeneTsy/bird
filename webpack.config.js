@@ -22,6 +22,16 @@ module.exports = {
             {
             test: /\.css$/, // применять это правило только к CSS-файлам
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] // к этим файлам нужно применить пакеты, которые мы уже установили
+            },
+            {
+                test: /\.(jpg|png|gif|woff|eot|ttf|svg)/,
+                 use: {
+                     loader: 'url-loader', // this need file-loader
+                     options: {
+                         limit: 50000
+ 
+                     }
+                 }
             }
             ]
         },
